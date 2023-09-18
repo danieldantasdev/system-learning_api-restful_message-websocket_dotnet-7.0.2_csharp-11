@@ -1,0 +1,22 @@
+<div class="ud-header">
+    <h2 class="text-center">Chat</h2>
+</div>
+
+<div class="body-footer">
+
+    <div class="ud-body">
+        <div class="msg-box">
+            <ul>
+                <li *ngFor="let mObj of messages"
+                    [ngClass]="mObj.user === message.user ? 'in-msg' : 'ex-msg'">{{mObj.user}} :<br/><span
+                        class="msg-italic-style">{{mObj.mensagemTexto}}</span></li>
+            </ul>
+        </div>
+        <div class="ud-flex-row">
+            <input type="text" placeholder="Type message here" class="msg-input" [(ngModel)]="message.mensagemTexto"/>
+            <button class="send-btn" (click)="send()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+        <input type="text" placeholder="Your name" class="name-box" [(ngModel)]="message.user"/>
+    </div>
+
+</div>
